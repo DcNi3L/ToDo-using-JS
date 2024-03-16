@@ -59,6 +59,7 @@ body {
         }
 
         .add-btn {
+            cursor: pointer;
             border: none;
             outline: none;
             padding: 0.4rem 1rem;
@@ -116,6 +117,7 @@ body {
             padding: 0.5rem 0.6rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 10px;
             border-radius: 6px;
             font-size: 16px;
@@ -127,6 +129,7 @@ body {
             
 
             .btns button {
+                cursor: pointer;
                 width: 27px;
                 height: 25px;
                 font-size: 13px;
@@ -173,6 +176,70 @@ body {
             text-align: center;
             font-size: 20px;
             font-weight: 500;
+        }
+    }
+
+    .clear {
+        cursor: pointer;
+        width: 94%;
+        margin: 0 auto;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        padding: 0.2rem;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 1.5px;
+        background: rgba(255, 0, 0, 0.7);
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: #fff;
+            background: #f00;
+        }
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    body {
+        display: flex;
+        justify-content: center;
+        padding: 3rem 1rem;
+
+        .container {
+            padding: 1rem;
+        }
+
+        .input_layer {
+            width: 100%;
+
+            .add-task {
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            .add-btn {
+                width: 100%;
+                border-radius: 6px;
+                font-size: 18px;
+                margin-left: 1px;
+                margin-top: 7px;
+            }
+        }
+
+        .task-wrapper {
+            padding: 0;
+            margin-bottom: 18px;
+            .text {
+                width: 220px;
+                word-wrap: break-word;
+            }
+        }
+
+        .clear {
+            margin-bottom: 18px;
         }
     }
 }

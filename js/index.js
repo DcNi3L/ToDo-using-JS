@@ -2,6 +2,7 @@
 const form = document.querySelector('.input_layer');
 const taskInput = document.getElementById('task');
 const taskList = document.querySelector('.task-wrapper');
+const clearBtn = document.getElementById('clear');
 
 
 let tasks = [];
@@ -19,6 +20,7 @@ checkEmptyList()
 form.addEventListener('submit', addTask)
 taskList.addEventListener('click', deleteTask)
 taskList.addEventListener('click', doneTask)
+clearBtn.addEventListener('click', clearTask)
 
 
 //Functions
@@ -76,15 +78,30 @@ function doneTask(e) {
     saveToStorage()
 }
 
+function clearTask() {
+    if(tasks.length > 0) {
+        tasks = [];
+        saveToStorage();
+
+        taskList.innerHTML = "";
+        checkEmptyList();
+    } else {
+        clearBtn.style.display = "none";
+    }
+
+}
+
 function checkEmptyList() {
     if(tasks.length === 0) {
         const empty = `<div class="empty">Empty list, please create task!</div>`;
+        clearBtn.style.display = "none";
         taskList.insertAdjacentHTML('afterbegin', empty);
     }
 
     if(tasks.length > 0) {
         const emptyEl = document.querySelector('.empty');
         emptyEl ? emptyEl.remove() : null;
+        clearBtn.style.display = "block";
     }
 }
 
